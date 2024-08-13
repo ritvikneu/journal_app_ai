@@ -10,6 +10,7 @@ from urllib.parse import quote as url_quote
 
 url = "https://example.com/?query=" + url_quote("some value")
 
+
 app = Flask(__name__)
 
 # Initialize the OpenAI model
