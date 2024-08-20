@@ -1,18 +1,19 @@
-# Use an official Python runtime as the base image
-FROM python:3.9-slim
+# Use a base image that supports multiple architectures
+FROM --platform=$BUILDPLATFORM python:3.9-slim-buster
 
 # Set the working directory in the container
 WORKDIR /app
 
+# Copy the current directory contents into the container at /app
 COPY . /app
 
-# Install the required packages
+# Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Make port 5000 available to the world outside this container
 EXPOSE 5000
 
-# Define environment variable for Flask
+# Define environment variable
 ENV FLASK_APP=app.py
 
 # Run app.py when the container launches
