@@ -74,8 +74,10 @@ This application is a Flask-based web service that generates social media posts 
    ```
    bash setup-docker.sh
    ```
-
-4. After the script finishes, log out and log back in for the group changes to take effect.
+4. Run command
+    ```
+   docker run -p 8080:5000 -e PORT=5000 -e OPENAI_API_KEY=YOUR_API_KEY flask-journal-pilot
+   ```
 
 ## Configuration
 
